@@ -29,7 +29,7 @@ def only_numbers(char):
 validation = root.register(only_numbers)
 
 
-def change_label_text(obj, message):
+def change_text(obj, message):
     obj.config(text=message)
 
 
@@ -41,31 +41,31 @@ def set_text_input(obj, text):
 def motor_1_increase_speed(target, no):
     global motor1CurrentRpm
     motor1CurrentRpm = motor1CurrentRpm + int(no.get())
-    change_label_text(target, motor1CurrentRpm)
+    change_text(target, motor1CurrentRpm)
 
 
 def motor_2_increase_speed(target, no):
     global motor2CurrentRpm
     motor2CurrentRpm = motor2CurrentRpm + int(no.get())
-    change_label_text(target, motor2CurrentRpm)
+    change_text(target, motor2CurrentRpm)
 
 
 def motor_1_decrease_speed(target, no):
     global motor1CurrentRpm
     motor1CurrentRpm = motor1CurrentRpm - int(no.get())
-    change_label_text(target, motor1CurrentRpm)
+    change_text(target, motor1CurrentRpm)
 
 
 def motor_2_decrease_speed(target, no):
     global motor2CurrentRpm
     motor2CurrentRpm = motor2CurrentRpm - int(no.get())
-    change_label_text(target, motor2CurrentRpm)
+    change_text(target, motor2CurrentRpm)
 
 
 def toggleLED():
     led.toggle()
     if led.is_lit:
-        change_label_text(motorBtn_1, "MOTOR1 OFF")
+        change_text(motorBtn_1, "MOTOR1 OFF")
         welcome_message.value = "MOTOR1_OFF";
         client = mqtt.Client()
         client.connect('localhost', 1883, 60)
@@ -74,7 +74,7 @@ def toggleLED():
         if True:
             client.publish('motor1_onoff', '0')
     else:
-        change_label_text(motorBtn_1, "MOTOR1 ON")
+        change_text(motorBtn_1, "MOTOR1 ON")
         welcome_message.value = "MOTOR1_OFF";
         client = mqtt.Client()
         client.connect('localhost', 1883, 60)
@@ -87,7 +87,7 @@ def toggleLED():
 def toggleLED1():
     led1.toggle()
     if led1.is_lit:
-        change_label_text(motorBtn_2, "MOTOR2 OFF")
+        change_text(motorBtn_2, "MOTOR2 OFF")
         welcome_message.value = "MOTOR2_oFF";
         client = mqtt.Client()
         client.connect('localhost', 1883, 60)
@@ -96,7 +96,7 @@ def toggleLED1():
         if True:
             client.publish('motor2_onoff', '0')
     else:
-        change_label_text(motorBtn_2, "MOTOR2 ON")
+        change_text(motorBtn_2, "MOTOR2 ON")
         client = mqtt.Client()
         client.connect('localhost', 1883, 60)
         client.loop_start()
@@ -108,7 +108,7 @@ def toggleLED1():
 def toggleLED2():
     led1.toggle()
     if led1.is_lit:
-        change_label_text(motorBtn_3, "MOTOR1 DIR_R")
+        change_text(motorBtn_3, "MOTOR1 DIR_R")
         client = mqtt.Client()
         client.connect('localhost', 1883, 60)
         client.loop_start()
@@ -116,7 +116,7 @@ def toggleLED2():
         if True:
             client.publish('motor1_dir', '0')
     else:
-        change_label_text(motorBtn_3, "MOTOR1 DIR_L")
+        change_text(motorBtn_3, "MOTOR1 DIR_L")
         client = mqtt.Client()
         client.connect('localhost', 1883, 60)
         client.loop_start()
@@ -135,7 +135,7 @@ def toggleLED3():
         if True:
             client.publish('motor_speed', '0')
     else:
-        change_label_text(motor2DirectionControlButton, "MOTOR2 DIR_L")
+        change_text(motor2DirectionControlButton, "MOTOR2 DIR_L")
         welcome_message.value = "MOTOR2 DIR_L";
         client = mqtt.Client()
         client.connect('localhost', 1883, 60)
@@ -148,7 +148,7 @@ def toggleLED3():
 def toggleLED4():
     led3.toggle()
     if led3.is_lit:
-        change_label_text(motorSpeedControlButton, "MOTOR_SPEED_H")
+        change_text(motorSpeedControlButton, "MOTOR_SPEED_H")
         client = mqtt.Client()
         client.connect('localhost', 1883, 60)
         client.loop_start()
@@ -156,7 +156,7 @@ def toggleLED4():
         if True:
             client.publish('motorspeed', '0')
     else:
-        change_label_text(motorSpeedControlButton, "MOTOR_SPEED_L")
+        change_text(motorSpeedControlButton, "MOTOR_SPEED_L")
         client = mqtt.Client()
         client.connect('localhost', 1883, 60)
         client.loop_start()
