@@ -173,11 +173,11 @@ def toggleLED4():
 
 welcome_message = Label(root, text="Welcome to my app")
 
-motorBtn_1 = Button(root, toggleLED, text="MOTOR1 ON")
-motorBtn_2 = Button(root, toggleLED1, text="MOTOR2 ON")
-motorBtn_3 = Button(root, toggleLED2, text="MOTOR1 DIR_R")
-motor2DirectionControlButton = Button(root, toggleLED3, text="MOTOR2 DIR_R")
-motorSpeedControlButton = Button(root, toggleLED4, text="MOTOR_SPEED_H")
+motorBtn_1 = Button(root,  command=toggleLED, text="MOTOR1 ON")
+motorBtn_2 = Button(root,  command=toggleLED1, text="MOTOR2 ON")
+motorBtn_3 = Button(root,  command=toggleLED2, text="MOTOR1 DIR_R")
+motor2DirectionControlButton = Button(root,  command=toggleLED3, text="MOTOR2 DIR_R")
+motorSpeedControlButton = Button(root,  command=toggleLED4, text="MOTOR_SPEED_H")
 exitButton = Button(root, command=exit_app, text="Exit")
 
 # new
@@ -207,20 +207,20 @@ speedIncrementLabel.place(x= 220, y=30)
 
 # motor 1 set alignment
 motor1DecreaseSpeedBtn.place(x=30, y=50)
-motorBtn_1.place(x=130, y=50)
-motor1SpeedInput.place(x=220, y=50)
-motor1CurrentRpmLabel.place(x=360, y=50)
-motor1IncreaseSpeedBtn.place(x=430, y=50)
+motorBtn_1.place(x=170, y=50)
+motor1SpeedInput.place(x=300, y=50)
+motor1CurrentRpmLabel.place(x=450, y=50)
+motor1IncreaseSpeedBtn.place(x=500, y=50)
 # motor 2 set alignment
 motor2DecreaseSpeedBtn.place(x=30, y=110)
-motorBtn_2.place(x=130, y=110)
-motor2SpeedInput.place(x=220, y=110)
-motor2CurrentRpmLabel.place(x=360, y=110)
-motor2IncreaseSpeedBtn.place(x=430, y=110)
+motorBtn_2.place(x=170, y=110)
+motor2SpeedInput.place(x=300, y=110)
+motor2CurrentRpmLabel.place(x=450, y=110)
+motor2IncreaseSpeedBtn.place(x=500, y=110)
 
-motorBtn_3.place(x=130, y=170)
-motor2DirectionControlButton.place(x=130, y=230)
-motorSpeedControlButton.place(x=130, y=290)
+motorBtn_3.place(x=170, y=170)
+motor2DirectionControlButton.place(x=170, y=230)
+motorSpeedControlButton.place(x=170, y=290)
 exitButton.place(relx=0.45, rely=0.8)
 
 
