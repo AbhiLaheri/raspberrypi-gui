@@ -17,7 +17,8 @@ defaultRpmIncrementAndDecrementSpeed = 2
 # main window object named root
 root = Tk()
 # giving title to the main window
-root.title("First Gui")
+root.title("First_Program")
+root.geometry('700x450')
 
 
 # function to validate mark entry
@@ -26,11 +27,6 @@ def only_numbers(char):
 
 
 validation = root.register(only_numbers)
-
-# giving title to the main window
-root.title("First_Program")
-root.geometry('700x450')
-
 
 
 def change_label_text(obj, message):
