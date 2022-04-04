@@ -66,7 +66,7 @@ def toggleLED():
     led.toggle()
     if led.is_lit:
         change_text(motorBtn_1, "MOTOR1 OFF")
-        welcome_message.value = "MOTOR1_OFF";
+        change_text(welcome_message, "MOTOR1_OFF")
         client = mqtt.Client()
         client.connect('localhost', 1883, 60)
         client.loop_start()
@@ -75,7 +75,7 @@ def toggleLED():
             client.publish('motor1_onoff', '0')
     else:
         change_text(motorBtn_1, "MOTOR1 ON")
-        welcome_message.value = "MOTOR1_OFF";
+        change_text(welcome_message, "MOTOR1_ON")
         client = mqtt.Client()
         client.connect('localhost', 1883, 60)
         client.loop_start()
@@ -88,7 +88,7 @@ def toggleLED1():
     led1.toggle()
     if led1.is_lit:
         change_text(motorBtn_2, "MOTOR2 OFF")
-        welcome_message.value = "MOTOR2_oFF";
+        change_text(welcome_message, "MOTOR2_oFF")
         client = mqtt.Client()
         client.connect('localhost', 1883, 60)
         client.loop_start()
@@ -136,7 +136,7 @@ def toggleLED3():
             client.publish('motor_speed', '0')
     else:
         change_text(motor2DirectionControlButton, "MOTOR2 DIR_L")
-        welcome_message.value = "MOTOR2 DIR_L";
+        change_text(welcome_message, "MOTOR2 DIR_L")
         client = mqtt.Client()
         client.connect('localhost', 1883, 60)
         client.loop_start()
